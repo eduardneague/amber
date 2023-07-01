@@ -1,0 +1,26 @@
+/* navbar.css */
+
+.nav-black {
+    background: #111111;
+    transition-timing-function: ease-out;
+    transition: all .5s;
+}
+
+.nav-wrapper {
+    background: linear-gradient(
+        360deg,
+        transparent,
+        rgba(37, 37, 37, .60),
+        #111
+    );
+}
+
+@media only screen and (min-width: 1180px) {
+    .nav-logo {
+        margin-left: 5rem !important;
+    }
+
+    .nav-avatar {
+        margin-right: 5rem !important;
+    }
+}

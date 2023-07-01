@@ -1,0 +1,95 @@
+.movie-row-swiper {
+    padding: 0px !important;
+}
+.swiper-wrapper {
+    padding: 0px !important;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    color: orange !important;
+    z-index: 10 !important;
+    display: none;
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after {
+    color: orange !important;
+    z-index: 10 !important;
+    display: none;
+}
+
+@media only screen and (min-width: 500px) {
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+        color: orange !important;
+        z-index: 1000;
+        display: flex;
+    }
+    
+    .swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after {
+        color: orange !important;
+        display: flex;
+    }
+}
+
+.swiper-button-disabled {
+    display: none !important;
+}
+
+.movie-left-arrow-backdrop {
+    background: linear-gradient(
+        270deg,
+        transparent,
+        rgba(0, 0, 0, .30),
+        black
+    );
+}
+
+.movie-right-arrow-backdrop {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, .30),
+        black
+    );
+}
+
+
+
+@media only screen and (min-width: 1180px) {
+    .movie-left-arrow-backdrop {
+        background: linear-gradient(
+            270deg,
+            transparent,
+            rgba(0, 0, 0, .70),
+            black
+        );
+    }
+    
+    .movie-right-arrow-backdrop {
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 0, 0, .70),
+            black
+        );
+    }
+}
+
+@media only screen and (min-width: 1750px) {
+    .movie-left-arrow-backdrop {
+        background: linear-gradient(
+            270deg,
+            transparent,
+            rgba(0, 0, 0, .80),
+            black
+        );
+    }
+    
+    .movie-right-arrow-backdrop {
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 0, 0, .80),
+            black
+        );
+    }
+}

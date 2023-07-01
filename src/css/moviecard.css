@@ -1,0 +1,10 @@
+.movie-card {
+    transition-timing-function: ease-out;
+    transition: all .5s;
+}
+
+.movie-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+

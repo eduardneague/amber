@@ -1,0 +1,126 @@
+/* mainbanner.css */
+
+.banner-fade {
+    position: absolute;
+    height: 24rem;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(37, 37, 37, .60),
+        #111
+    );
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.banner-contents {
+    z-index: 2;
+}
+
+.banner-background {
+    height: 30rem;
+}
+
+.banner-contents-wrapper {
+    padding-top: 16rem;
+}
+
+@media only screen and (min-width: 450px) {
+    .banner-contents {
+        width: 90%;
+    }
+    
+    .banner-buttons-wrapper {
+        gap: 1rem !important;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .banner-contents {
+        width: 92%;
+        gap: 2rem !important;
+    }
+
+    .banner-background {
+        height: 45rem;
+    }
+    
+    .banner-contents-wrapper {
+        padding-top: 28rem !important;
+    }
+
+    .banner-title {
+        font-size: 3rem !important;
+    }
+
+    .banner-description {
+        font-size: 1.3rem !important;
+        line-height: 1.8rem !important;
+        max-width: 40rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    .play-button {
+        padding: 1rem !important;
+    }
+
+    .play-button h1 {
+        font-size: 1.3rem !important;
+    }
+
+    .more-info-button {
+        padding: 1rem !important;
+        font-size: 1.2rem !important;
+    }
+
+    .banner-buttons-wrapper {
+        gap: 1rem !important;
+    }
+}
+
+@media only screen and (min-width: 1180px) {
+    .banner-contents {
+        width: 90%;
+    }
+    
+    .banner-background {
+        height: 50rem;
+    }
+
+    .banner-contents-wrapper {
+        padding-top: 32rem !important;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .banner-contents {
+        width: 91%;
+    }
+}
+
+@media only screen and (min-width: 1740px) {
+    .banner-contents {
+        width: 91.5%;
+    }
+}
+
+.play-button {
+    transition: all .3s;
+    transition-timing-function: ease-out;
+}
+
+.play-button:hover {
+    background: #db6800;
+    color: white;
+}
+
+.more-info-button {
+    transition: all .3s;
+    transition-timing-function: ease-out;
+}
+
+.more-info-button:hover {
+    background: #db6800;
+    color: white;
+}

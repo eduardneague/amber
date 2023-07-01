@@ -1,0 +1,65 @@
+.movie-row-movies::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-row-right-button {
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(0, 0, 0, 0.7),
+        black
+    );
+}
+
+.movie-row-left-button {
+    background: linear-gradient(
+        270deg,
+        transparent,
+        rgba(0, 0, 0, 0.7),
+        black
+    );
+}
+
+
+.movie-row-right-button:hover .triangle-arrow {
+    color: #db6800;
+}
+
+.triangle-arrow {
+    transition-timing-function: ease-out;
+    transition: all .2s;
+}
+
+.triangle-arrow:hover {
+    color:#db6800;
+}
+
+@media only screen and (min-width: 1180px) {
+    .movie-row-title {
+        margin-left: 4rem !important;
+    }
+
+    .movie-row-movies {
+        margin-left: 2.5rem !important;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .movie-row-title {
+        margin-left: 4.5rem !important;
+    }
+
+    .movie-row-movies {
+        margin-left: 2.7rem !important;
+    }
+}
+
+@media only screen and (min-width: 1740px) {
+    .movie-row-title {
+        margin-left: 5rem !important;
+    }
+
+    .movie-row-movies {
+        margin-left: 3.2rem !important;
+    }
+}
