@@ -3,8 +3,14 @@
     transition: all .5s;
 }
 
+
+
 .movie-card:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+.movie-overlay {
+    background: rgba(0, 0, 0, .7);
 }
 

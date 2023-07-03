@@ -3,6 +3,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import MainBanner from '../components/MainBanner'
 import AllMovies from '../components/AllMovies'
+import Footer from '../components/Footer'
 
 const HomeScreen: React.FC = (): JSX.Element => {
     return (
@@ -10,6 +11,7 @@ const HomeScreen: React.FC = (): JSX.Element => {
             <NavBar/>
             <MainBanner/>
             <AllMovies/>    
+            <Footer/>
         </>
     )
 }

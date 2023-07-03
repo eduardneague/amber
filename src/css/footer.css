@@ -1,0 +1,19 @@
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding-left: 2rem;
+    padding-top: 0rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.footer-grid-column1 {
+    grid-column: 1 / 2;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

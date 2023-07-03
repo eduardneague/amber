@@ -10,7 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-
+      colors: {
+        'amber-orange': '#db6800',
+      }
     },
   },
   plugins: [

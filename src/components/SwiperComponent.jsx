@@ -19,7 +19,7 @@ const SwiperComponent = ({slides, startIndex, isLargeSwiper}) => {
                     key = {slide.id}
                     background = {slide.backdrop_path}
                     posterBackground = {slide.poster_path}
-                    title = {slide.original_title || slide.title}
+                    title = {slide?.original_title || slide?.title || slide?.name}
                     description = {slide.overview}
                     releaseDate = {slide.release_date}
                     isLarge = {isLargeSwiper}

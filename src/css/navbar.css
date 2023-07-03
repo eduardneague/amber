@@ -15,6 +15,31 @@
     );
 }
 
+
+@media only screen and (min-width: 720px) {
+    .search-bar {
+        width: 7rem;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .search-bar {
+        width: 13rem;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .search-bar {
+        width: 16rem;
+    }
+}
+
+@media only screen and (min-width: 1180px) {
+    .search-bar {
+        width: 20rem;
+    }
+}
+
 @media only screen and (min-width: 1180px) {
     .nav-logo {
         margin-left: 4.6rem !important;
