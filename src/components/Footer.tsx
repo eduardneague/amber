@@ -4,16 +4,18 @@ import '../css/footer.css'
 const Footer: React.FC = (): JSX.Element => {
     return (
         <div className = "flex flex-col justify-center items-center w-full">
-            <div className = "footer-grid bg-black font-[Poppins] text-white">
+            <div className = "footer-grid bg-black font-[Poppins] text-white mt-3">
                 <img 
                     src = "amber_logo_full.png" 
                     alt = "Amber Logo"
-                    className = "w-32 cursor-pointer"
+                    className = "w-32 cursor-pointer select-none"
+                    draggable = "false"
                 />
                 <img 
                     src = "powered_by_tmdb.png" 
                     alt = "TMDB Logo"
-                    className = "w-32 cursor-pointer"
+                    className = "w-32 cursor-pointer select-none"
+                    draggable = "false"
                 />
                 
                 <div className = "footer-grid-column1 flex flex-col gap-2 text-sm text-gray-100">

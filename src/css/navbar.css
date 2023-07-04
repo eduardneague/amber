@@ -15,14 +15,12 @@
     );
 }
 
-
-@media only screen and (min-width: 720px) {
-    .search-bar {
-        width: 7rem;
-    }
+.search-bar {
+    width: 10rem;
 }
 
-@media only screen and (min-width: 800px) {
+
+@media only screen and (min-width: 500px) {
     .search-bar {
         width: 13rem;
     }

@@ -41,11 +41,6 @@ const AllMovies: React.FC = (): JSX.Element => {
                 fetchUrl = {requests.fetchRomanceMovies}
                 isLargeRow = {false}
             />
-            <MovieRow 
-                title = 'Documentaries'
-                fetchUrl = {requests.fetchDocumentaries}
-                isLargeRow = {true}
-            />
         </>    
     )
 }
