@@ -38,11 +38,17 @@ const MovieCard: React.FC<Props> = ({background, posterBackground, title, descri
         width:'20rem',
         maxHeight: '272px'
     }
+    const BrokenImage = "/not_found.jpg";
+    
+    const imageOnError = (event: any) => {
+        event.currentTarget.src = BrokenImage;
+    }
 
     return (
         <div>
             <img 
                 onClick = {handleShowInfo}
+                onError = {(event) => imageOnError(event)}
                 src = {`https://image.tmdb.org/t/p/original${isLarge ? background : posterBackground}`}
                 alt = {title} 
                 className = "movie-card h-full object-cover select-none rounded-md relative"

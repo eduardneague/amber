@@ -12,6 +12,7 @@ import Originals from './pages/Originals'
 import Movies from './pages/Movies'
 import TopRated from './pages/TopRated'
 import Trending from './pages/Trending'
+import SearchPage from './pages/SearchPage'
 
 import '../src/css/reset.css'
 import '../src/css/utility.css'
@@ -27,6 +28,7 @@ const App: React.FC = (): JSX.Element => {
                 <Route path = "/movies" element = {<Movies/>}/>
                 <Route path = "/top-rated" element = {<TopRated/>}/>
                 <Route path = "/trending" element = {<Trending/>}/>
+                <Route path = "/search" element = {<SearchPage/>}/>
             </Route>
           </Routes> 
         </div>

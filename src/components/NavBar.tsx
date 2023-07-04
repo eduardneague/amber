@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import '../css/navbar.css'
 
-import {NavLink, Link} from 'react-router-dom'
+import {NavLink, Link, useNavigate} from 'react-router-dom'
 
 import {motion} from 'framer-motion'
 import {BiSearchAlt2} from 'react-icons/bi'
@@ -16,8 +16,11 @@ const NavBar: React.FC = (): JSX.Element => {
     const [mobileNav, setMobileNav] = useState<boolean>(false)
     const [showSearch, setShowSearch] = useState<boolean>(false)
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
+    const [canSearch, setCanSearch] = useState<boolean>(false)
+    const [searchValue, setSearchValue] = useState<string>('')
 
     const [blockScroll, allowScroll] = useScrollBlock()
+    const navigate = useNavigate()
 
     useEffect(() => {
         const handleWindowChange = () => {
@@ -52,9 +55,29 @@ const NavBar: React.FC = (): JSX.Element => {
         setShowSearch(true)
     }
 
+    const handleSearchValue = (event: any) => {
+        event.preventDefault()
+        setSearchValue(event.target.value)
+
+        if(searchValue.trim().length >= 2) {
+            setCanSearch(true)
+        } else setCanSearch(false)
+    }
+
+    const handleEnterInput = (event: any) => {
+        if(event.key === 'Enter') {
+            navigate(`/search?input=${searchValue}`, {state: 'state'})
+        }
+    }
+
+    const handleSearchButton = () => {
+        navigate(`/search?input=${searchValue}`, {state: 'state'})
+    }
+
+
     return (
         <> {
-            windowWidth > 820 /* dekstop nav */ ? 
+            windowWidth > 850 /* dekstop nav */ ? 
             (
                 <div className = {` ${show ? 'nav-black' : 'nav-wrapper'} w-full h-24 fixed top-0 z-[100]`}>
                     <div className="nav-content flex justify-between items-center w-full h-full">
@@ -70,7 +93,11 @@ const NavBar: React.FC = (): JSX.Element => {
                                     alt = "amber_logo"
                                 />
                             </Link>
-                            <div className = "flex gap-5 mb-[.15rem] font-[Poppins] select-none">
+                            <motion.div
+                                initial = {{x: -100, opacity: 0}}
+                                animate = {{x: 0, opacity: 1}}
+                                transition = {{ease: "easeOut", duration: .5}} 
+                                className = "flex gap-5 mb-[.15rem] font-[Poppins] select-none">
                                 <NavLink
                                         to="/"
                                         className={({ isActive, isPending }) =>
@@ -111,7 +138,7 @@ const NavBar: React.FC = (): JSX.Element => {
                                 >
                                         Trending
                                 </NavLink>
-                            </div>
+                            </motion.div>
                         </div>
                         
                         <div className = "flex gap-5 items-center justify-center cursor-pointer">
@@ -127,12 +154,27 @@ const NavBar: React.FC = (): JSX.Element => {
                                             type = "text" 
                                             placeholder = "Search"
                                             name = "search_value"
-                                            // value = ""
+                                            value = {searchValue}
+                                            onChange = {handleSearchValue}
+                                            onKeyDown = {handleEnterInput}
                                             className = "search-bar p-2 text-white bg-black font-[Poppins] focus:outline-2 focus:outline focus:outline-amber-orange"
                                         />
-                                        <div className = "absolute top-[20%] right-2">
-                                            <BsFillArrowRightCircleFill className = "text-amber-orange text-2xl"/>
-                                        </div>
+                                        { canSearch ? (
+                                            <div 
+                                                className = "absolute top-[20%] right-2" 
+                                                onClick = {handleSearchButton}
+                                            >
+                                                <BsFillArrowRightCircleFill className = "text-amber-orange text-2xl"/>
+                                            </div>
+                                        ) 
+                                        : 
+                                        (
+                                            <div className = "absolute top-[20%] right-2">
+                                                <BsFillArrowRightCircleFill className = "text-amber-orange text-2xl"/>
+                                            </div>
+                                        )
+                                       
+                                        }
                                    </motion.div>
                                 )
                                 : 
@@ -271,28 +313,44 @@ const NavBar: React.FC = (): JSX.Element => {
                                 
                                 className = "flex gap-3"
                             >
-                                {
+                              {
                                 showSearch ? (
                                    <motion.div
                                     initial = {{x: -100, opacity: 0}}
                                     animate = {{x: 0, opacity: 1}}
                                     transition = {{ease: "easeOut", duration: .5}}
-                                    className = "relative z-[100]"
+                                    className = "relative"
                                     >
                                         <input 
                                             type = "text" 
                                             placeholder = "Search"
                                             name = "search_value"
-                                            // value = ""
-                                            className = "search-bar p-2 text-white bg-black focus:outline-2 focus:outline focus:outline-amber-orange font-[Poppins]"
+                                            value = {searchValue}
+                                            onChange = {handleSearchValue}
+                                            onKeyDown = {handleEnterInput}
+                                            className = "search-bar p-2 text-white bg-black font-[Poppins] focus:outline-2 focus:outline focus:outline-amber-orange"
                                         />
-                                        <div className = "absolute top-[22%] right-2">
-                                            <BsFillArrowRightCircleFill className = "text-amber-orange text-2xl"/>
-                                        </div>
+                                        { canSearch ? (
+                                            <div 
+                                                className = "absolute top-[20%] right-2" 
+                                                onClick = {handleSearchButton}
+                                            >
+                                                <BsFillArrowRightCircleFill className = "text-amber-orange text-2xl"/>
+                                            </div>
+                                        ) 
+                                        : 
+                                        (
+                                            <div className = "absolute top-[20%] right-2">
+                                                <BsFillArrowRightCircleFill className = "text-amber-orange text-2xl"/>
+                                            </div>
+                                        )
+                                       
+                                        }
                                    </motion.div>
-                                ) : 
+                                )
+                                : 
                                 (
-                                    <div onClick = {(event) => {handleSearchClick(event)}} className = "flex gap-2">
+                                    <div onClick = {(event) => {handleSearchClick(event)}}>
                                         <BiSearchAlt2 className = "text-white text-3xl"/>
                                     </div>
                                 )
