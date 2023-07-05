@@ -43,8 +43,6 @@ const SearchPage: React.FC = (): JSX.Element => {
                 }
                 </h1>
 
-                
-
                 <div className = "movie-row-movies">
                     <SwiperComponent
                         slides = {resultMovies}

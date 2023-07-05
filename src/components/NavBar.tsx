@@ -184,16 +184,18 @@ const NavBar: React.FC = (): JSX.Element => {
                                     </div>
                                 )
                             }
+                            <Link to = "/profile">
+                                <motion.img 
+                                    initial = {{x: 200, opacity: 0}}
+                                    animate = {{x: 0, opacity: 1}}
+                                    transition = {{ease: "easeOut", duration: 1}}
+                                    className = "nav-avatar cursor-pointer aspect-square h-10 mr-[1.6rem] object-contain select-none"
+                                    draggable = "false"
+                                    src = "amber_avatar.png" 
+                                    alt = "avatar_picture"
+                                />
+                            </Link>
                             
-                            <motion.img 
-                                initial = {{x: 200, opacity: 0}}
-                                animate = {{x: 0, opacity: 1}}
-                                transition = {{ease: "easeOut", duration: 1}}
-                                className = "nav-avatar cursor-pointer aspect-square h-10 mr-[1.6rem] object-contain select-none"
-                                draggable = "false"
-                                src = "amber_avatar.png" 
-                                alt = "avatar_picture"
-                            />
                         </div>
                         
                     </div>
@@ -361,16 +363,18 @@ const NavBar: React.FC = (): JSX.Element => {
                             <div onClick = {() => {blockScroll(); handleHamburgerClick()} }>
                                 <RxHamburgerMenu className = "text-white text-3xl"/>
                             </div>
-
-                            <motion.img 
-                                initial = {{x: 200, opacity: 0}}
-                                animate = {{x: 0, opacity: 1}}
-                                transition = {{ease: "easeOut", duration: 1}}
-                                draggable = "false"
-                                className = "nav-avatar cursor-pointer aspect-square h-10 mr-[1.6rem] object-contain select-none"
-                                src = "amber_avatar.png" 
-                                alt = "avatar_picture"
-                            />
+                            <Link to = "/profile">
+                                <motion.img 
+                                    initial = {{x: 200, opacity: 0}}
+                                    animate = {{x: 0, opacity: 1}}
+                                    transition = {{ease: "easeOut", duration: 1}}
+                                    draggable = "false"
+                                    className = "nav-avatar cursor-pointer aspect-square h-10 mr-[1.6rem] object-contain select-none"
+                                    src = "amber_avatar.png" 
+                                    alt = "avatar_picture"
+                                />
+                            </Link>
+                            
                         </div>
                         
                     </div>

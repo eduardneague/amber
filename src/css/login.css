@@ -1,0 +1,13 @@
+.login-background-wrapper {
+    background: url('/public/login_background.jpg');
+}
+
+.get-started-button {
+    transition-timing-function: ease-out;
+    transition: all .4s;
+}
+
+.get-started-button:hover {
+    color: #db6800;
+    background: white;
+}
