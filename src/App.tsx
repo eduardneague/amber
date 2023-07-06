@@ -34,7 +34,7 @@ const App: React.FC = (): JSX.Element => {
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
-          console.log(user)
+          // console.log(user)
           dispatch(
               login(
                 {
@@ -53,7 +53,7 @@ const App: React.FC = (): JSX.Element => {
 
     return (
       <>
-        <div className = "app bg-black mb-10">
+        <div className = "app bg-black mb-10 flex justify-center items-center flex-col w-full">
           <Routes>
             
             <Route element = {<ProtectedRoutes/>} errorElement = {<WentWrong/>}>

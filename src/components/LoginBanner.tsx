@@ -68,7 +68,7 @@ const LoginBanner: React.FC = (): JSX.Element => {
     const signInUser = () => {
         signInWithEmailAndPassword(auth, formDetails.email_input, formDetails.password_input)
             .then((userCredentials: any) => {
-                console.log(userCredentials)
+                // console.log(userCredentials)
                 navigate('/', {state: {message: "Log In: Success"}})
                 allowScroll()
                 setError('')
@@ -103,7 +103,7 @@ const LoginBanner: React.FC = (): JSX.Element => {
                     <motion.div 
                         initial = {{y: -200, opacity: 0}}
                         animate = {{y: 0, opacity: 1}}
-                        transition = {{ease: "easeOut", duration: 1}}
+                        transition = {{ease: "easeOut", duration: .5}}
                         className = "login-box flex flex-col justify-center items-center"
                     >
                         <img 
@@ -129,7 +129,11 @@ const LoginBanner: React.FC = (): JSX.Element => {
                 : signIn === true && register === false ?
                 (
                     <div>
-                        <div className = "login-box-credentials flex gap-6 flex-col bg-[#111] w-[20rem] p-5 font-[Poppins]">
+                        <motion.div 
+                            initial = {{y: -200, opacity: 0}}
+                            animate = {{y: 0, opacity: 1}}
+                            transition = {{ease: "easeOut", duration: .5}}
+                            className = "login-box-credentials flex gap-6 flex-col bg-[#111] w-[20rem] p-5 font-[Poppins]">
                             <h1 className = "text-white text-2xl font-bold">
                                 Sign In
                             </h1>
@@ -173,8 +177,12 @@ const LoginBanner: React.FC = (): JSX.Element => {
                                     Register now.
                                 </span> 
                             </p>
-                        </div>
-                        <div className = "login-box-credentials flex gap-0 flex-col bg-[#111] w-[20rem] p-5 font-[Poppins] mt-5">
+                        </motion.div>
+                        <motion.div 
+                            initial = {{y: -200, opacity: 0}}
+                            animate = {{y: 0, opacity: 1}}
+                            transition = {{ease: "easeOut", duration: .5}}
+                            className = "login-box-credentials flex gap-0 flex-col bg-[#111] w-[20rem] p-5 font-[Poppins] mt-5">
                             <h1 className = "text-white text-xl font-bold">
                                 Here's a demo account for just trying out the app:
                             </h1>
@@ -182,13 +190,17 @@ const LoginBanner: React.FC = (): JSX.Element => {
                                 <p className = "text-amber-orange font-bold">E-mail: <span className = "font-normal text-white">demo@amber.com</span> </p>
                                 <p className = "text-amber-orange font-bold">Password: <span className = "font-normal text-white">demodemo</span> </p>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
 
                 /* REGISTER */ 
                 ) : signIn === false && register === true && registerSuccess === false ? 
                 (
-                    <div className = "login-box-credentials flex gap-6 flex-col bg-[#111] w-[20rem] p-5 font-[Poppins]">
+                    <motion.div 
+                        initial = {{y: -200, opacity: 0}}
+                        animate = {{y: 0, opacity: 1}}
+                        transition = {{ease: "easeOut", duration: .5}}
+                        className = "login-box-credentials flex gap-6 flex-col bg-[#111] w-[20rem] p-5 font-[Poppins]">
                         <h1 className = "text-white text-2xl font-bold">
                             Register
                         </h1>
@@ -232,7 +244,7 @@ const LoginBanner: React.FC = (): JSX.Element => {
                                 Sign In now.
                             </span> 
                         </p>
-                    </div>
+                    </motion.div>
                 ) 
                 : signIn === false && register === true && registerSuccess === true ? 
                 (
