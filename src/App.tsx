@@ -34,7 +34,7 @@ const App: React.FC = (): JSX.Element => {
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
-          // console.log(user)
+          // console.log(user)d
           dispatch(
               login(
                 {
