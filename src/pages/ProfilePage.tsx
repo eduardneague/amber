@@ -64,7 +64,7 @@ const ProfilePage: React.FC = (): JSX.Element => {
        fetchPost()
     }, [])
  
-    // d d
+    // d d d
 
     const loadCheckout = async (priceId: any) => {
         const docRef = doc(db, "customers", user.uid)
